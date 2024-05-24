@@ -1,9 +1,6 @@
 package com.pep.securemessagehandler.message.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.Instant;
@@ -11,12 +8,14 @@ import java.time.Instant;
 @Entity
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "message")
 public class Message {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Enumerated(EnumType.STRING)
